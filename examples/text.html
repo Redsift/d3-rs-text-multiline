@@ -25,11 +25,11 @@
         
     var svg = d3_rs_svg.html().width(width).height(height);
     
-    var el = d3.select('#elm').call(svg).select(svg.child());
+    var el = d3.select('#elm').call(svg).select(svg.self()).select(svg.child());
 
     var text = d3_rs_text_multiline.svg();          
 
-    el.datum( [ { text: 'first' }, { text: 'second'.split('') }, 'last' ] ).call(text);
+    el.datum( [ { text: '' }, { text: 'second'.split('') }, 'last' ] ).call(text);
     el.datum( [ { text: 'first 100 div 90' }, 'second' ] ).transition().duration(3000).call(text); 
 
     </script>

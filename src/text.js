@@ -1,34 +1,34 @@
 import { select } from 'd3-selection';
 
 export default function text(id) {
-  
   var classed = 'text-multi-line';
 
   /* E.g.
   function(d) {
-    var i = d3.interpolateString(this.textContent, d);
-
+    var i = d3.interpolateString(this.textContent, d),
+        node = this;
+        
     return function(t) {
-        this.textContent = i(t);
+        node.textContent = i(t);
     };
   };
   */
-  var text = (d) => d.text ? d.text.join ? d.text.join('') : d.text : d;
+  var text = (d) => d.text != null ? d.text.join ? d.text.join('') : d.text : d;
   var tweenText = function (dt) {
     var d = text(dt);
     var a = this.textContent ? this.textContent.length : 0;
     var b = d.length;
 
     var i = d3.interpolateRound(a, b);
-
+    var node = this;
     return function(t) {
-        this.textContent = d.substring(0, i(t));
+        node.textContent = d.substring(0, i(t));
     };  
   }; 
   function _impl(context) {
     var selection = context.selection ? context.selection() : context,
-        transition = (selection.delay !== undefined);
-    
+        transition = (context.selection !== undefined);
+
     selection.each(function(data) {
       var parent = d3.select(this);
       var el = parent.select(_impl.self());
@@ -36,10 +36,10 @@ export default function text(id) {
         el = parent.append('g').attr('id', _impl.id());
       }
       el.attr('class', classed);
-      
+
       var bind = el.selectAll('text')
                     .data(data);
-      
+
       bind.exit().remove();
             
       bind = bind.enter()
