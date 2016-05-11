@@ -6,6 +6,10 @@
 
 [![Circle CI](https://circleci.com/gh/Redsift/d3-rs-text-multiline.svg?style=svg)](https://circleci.com/gh/Redsift/d3-rs-text-multiline)
 
+## Example
+
+[View @redsift/d3-rs-text-multiline on Codepen](https://codepen.io/rahulpowar/pen/ONqZOQ/)
+
 ## Usage
 
 ### Browser
@@ -18,13 +22,13 @@
 
 ### ES6
 
-	import { text } from "d3-rs-text-multiline";
+	import { text } from "@redsift/d3-rs-text-multiline";
 	let eml = text.svg();
 	...
 	
 ### Require
 
-	var text = require("d3-rs-text-multiline");
+	var text = require("@redsift/d3-rs-text-multiline");
 	var eml = text.svg();
 	...
 
@@ -33,4 +37,6 @@
 |Name|Description|Transition|
 |----|-----------|----------|
 |classed|SVG custom class|N|
-
+|text|text accessor function|N|
+|tweenText|text tween function|N|
+|lineHeight|custom line height. if 0 (default), calculated using getBBox()|N|

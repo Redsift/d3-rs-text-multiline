@@ -46,10 +46,11 @@ export default function text(id) {
             
       bind = bind.enter()
               .append('text')
-                .attr('dominant-baseline', 'text-before-edge')
-                .attr('class', (d) => d.class)
+                .attr('dominant-baseline', 'text-before-edge')               
               .merge(bind);
-
+      
+      bind.attr('class', (d) => d.class);
+      
       // need to compute the expensive bbox()
       // and text may not be rendered on 1st use
       var cachedHeight = lineHeight;

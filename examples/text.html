@@ -7,6 +7,15 @@
 	body {
         margin: 1em;
 	}
+  
+  text {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+  }
+
+  text.demo {
+    font-weight: 600;
+  }
   </style>  
   </head>
   <body>
@@ -30,7 +39,7 @@
     var text = d3_rs_text_multiline.svg();          
 
     el.datum( [ { text: '' }, { text: 'second'.split('') }, 'last' ] ).call(text);
-    el.datum( [ { text: 'first 100 div 90' }, 'second' ] ).transition().duration(3000).call(text); 
+    el.datum( [ { text: 'first 100 div 90', class: 'demo' }, 'second' ] ).transition().duration(3000).call(text); 
 
     </script>
   </body>
