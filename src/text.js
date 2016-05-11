@@ -1,7 +1,9 @@
 import { select } from 'd3-selection';
+import { timer } from 'd3-timer';
+import { interpolateRound } from 'd3-interpolate';
 
 export default function text(id) {
-  var classed = 'text-multi-line';
+  var classed = 'text-multi-line', lineHeight = 0;
 
   /* E.g.
   function(d) {
@@ -19,7 +21,7 @@ export default function text(id) {
     var a = this.textContent ? this.textContent.length : 0;
     var b = d.length;
 
-    var i = d3.interpolateRound(a, b);
+    var i = interpolateRound(a, b);
     var node = this;
     return function(t) {
         node.textContent = d.substring(0, i(t));
@@ -30,7 +32,7 @@ export default function text(id) {
         transition = (context.selection !== undefined);
 
     selection.each(function(data) {
-      var parent = d3.select(this);
+      var parent = select(this);
       var el = parent.select(_impl.self());
       if (el.empty()) {
         el = parent.append('g').attr('id', _impl.id());
@@ -50,7 +52,7 @@ export default function text(id) {
 
       // need to compute the expensive bbox()
       // and text may not be rendered on 1st use
-      var cachedHeight = 0;
+      var cachedHeight = lineHeight;
       function _setDY() {
         var done = true;
         bind.attr('dy', function(_, i) { 
@@ -67,7 +69,7 @@ export default function text(id) {
         return done;
       }
       if (!_setDY()) {
-        d3.timer(_setDY, 10);
+        timer(_setDY, 10);
       }
       
       if (transition && tweenText) {
@@ -95,6 +97,10 @@ export default function text(id) {
   _impl.text = function(value) {
     return arguments.length ? (text = value, _impl) : text;
   };
+
+  _impl.lineHeight = function(value) {
+    return arguments.length ? (lineHeight = value, _impl) : lineHeight;
+  };  
 
   return _impl;
 }
