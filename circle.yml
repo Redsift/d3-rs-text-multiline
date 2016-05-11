@@ -10,11 +10,10 @@ checkout:
     - npm install -g npm
   post: 
     - git fetch --tags
-    - npm install
 
 dependencies: 
   override:
-    - npm build 
+    - npm install
     - mv ./distribution ${CIRCLE_ARTIFACTS}/distribution
 
 test:
