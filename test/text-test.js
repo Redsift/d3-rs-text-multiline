@@ -1,4 +1,4 @@
-var tape = require("tape"),
+var tape = require("tape-catch"),
     jsdom = require("jsdom"),
     html = require("html"),
     d3 = require("d3-selection"),
