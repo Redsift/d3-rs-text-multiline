@@ -8,8 +8,7 @@
 
 ## Example
 
-<iframe height='300' scrolling='no' src='//codepen.io/rahulpowar/embed/ONqZOQ/?height=300&theme-id=23815&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/rahulpowar/pen/ONqZOQ/'>@redsift/d3-rs-text-multiline</a> by Rahul Powar (<a href='http://codepen.io/rahulpowar'>@rahulpowar</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
+[View @redsift/d3-rs-text-multiline on Codepen](https://codepen.io/rahulpowar/pen/ONqZOQ/)
 
 ## Usage
 
