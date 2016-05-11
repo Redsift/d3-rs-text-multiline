@@ -1,6 +1,6 @@
 {
   "name": "@redsift/d3-rs-text-multiline",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Creates a text element using D3v4.",
   "keywords": [
     "text",
