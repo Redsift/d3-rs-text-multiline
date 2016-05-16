@@ -14,7 +14,7 @@
     "name": "Rahul Powar",
     "url": "https://medium.com/@rahulpowar"
   },
-  "main": "distribution/d3-rs-text-multiline.umd-es15.min.js",
+  "main": "distribution/d3-rs-text-multiline.umd-es2015.min.js",
   "jsnext:main": "index.js",
   "repository": {
     "type": "git",
