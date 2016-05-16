@@ -14,7 +14,7 @@
 
 ### Browser
 	
-	<script src="//static.redsift.io/reusable/d3-rs-text-multiline/latest/d3-rs-text-multiline.umd-es15.min.js"></script>
+	<script src="//static.redsift.io/reusable/d3-rs-text-multiline/latest/d3-rs-text-multiline.umd-es2015.min.js"></script>
 	<script>
 		var text = d3_rs_text_multiline.svg();
 		...

@@ -1,6 +1,6 @@
 {
   "name": "@redsift/d3-rs-text-multiline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates a text element using D3v4.",
   "keywords": [
     "text",
@@ -14,7 +14,7 @@
     "name": "Rahul Powar",
     "url": "https://medium.com/@rahulpowar"
   },
-  "main": "distribution/d3-rs-text-multiline.umd-es15.min.js",
+  "main": "distribution/d3-rs-text-multiline.umd-es2015.min.js",
   "jsnext:main": "index.js",
   "repository": {
     "type": "git",
@@ -26,13 +26,13 @@
     "pretest": "npm outdated && npm run build",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "version": "json2module package.json > package.js",
-    "install": "npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "d3-selection": "~0.7.2",
     "d3-timer": "~0.4.3",
     "d3-interpolate": "~0.7.0",    
-    "@redsift/d3-rs-svg": "~0.2.0"   
+    "@redsift/d3-rs-svg": "~0.2.2"   
   },
   "devDependencies": {
     "@redsift/tape-reel": "~0.0.2",
